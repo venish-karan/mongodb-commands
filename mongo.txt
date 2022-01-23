@@ -1,0 +1,31 @@
+with sql database for new set of data new table are created where we need to use join keys to relate the datas which makes the req slow 
+
+but in nosql the data is stored in one single document so no join key needed  which makes it fast to access
+
+
+######################################################
+
+MongoDB commands:
+
+1. show dbs;
+2. use <database> => create database(collection), also switch to the existing db
+3. in SQL we have tables but in mongodb we have collections 
+        => show collections(table)
+4.db is object in which we get many methods
+    => db.createCollection('products')
+        => show collections(table)
+    => db.products.drop() => deletes the table(collections)
+    => db.dropDatabase => to delete the whole database
+
+    => to see inside the collection 
+        => db.<collectionName>.find()
+        => db.<collectionName>.find({price: 250}) // to find specific data (filters)
+    
+    => to insert the document(javascript object (json)) in collection
+        =>db.products.insertOne({  })
+
+5. db.products.find() => returns multiple json objects
+   db.products.findOne() => returns single json objects
+
+6. db.products.insertOne({ name: productName, price: price }) // inserts only one document(object)
+   db.products.insertMany({ name: productName, price: price }, { name: productName, price: price }) // inserts many document(object)
